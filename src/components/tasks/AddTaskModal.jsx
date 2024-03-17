@@ -14,8 +14,8 @@ export default function AddTaskModal({ isOpen, setIsOpen }) {
                 <div className="flex flex-col gap-3">
                     <label htmlFor="title">Name</label>
                     <input type="text" name="" id="title" {...register("name")} />
-                    <label htmlFor="title">Email</label>
-                    <input type="email" name="" id="title" {...register("email")} />
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="" id="email" {...register("email")} />
                     <button type="submit" className="btn bg-violet-500 text-white">Submit</button>
                 </div>
             </form>
