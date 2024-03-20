@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { v4 as uuidv4 } from 'uuid';
 
 
 const initialState = {
@@ -24,7 +25,8 @@ export const taskSlice = createSlice({
         addTask: (state, { payload }) => {
             // TODO: mutate this
             // state.tasks = state.tasks.push(payload)
-            state.tasks.push(payload)
+            const id = uuidv4()
+            state.tasks.push({ id, ...payload })
         },
         updateStatus: (state, { payload }) => {
             // TODO: mutate this

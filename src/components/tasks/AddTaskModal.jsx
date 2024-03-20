@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Modal from "../ui/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { addTask, updateTask, removeTask } from "../../redux/features/tasks/taskSlice"
+import { addTask } from "../../redux/features/tasks/taskSlice"
 
 
 export default function AddTaskModal({ isOpen, setIsOpen }) {
