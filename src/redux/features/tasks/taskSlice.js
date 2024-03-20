@@ -7,7 +7,7 @@ const initialState = {
         // deme 1 data 
         {
             id: 1,
-            status: 'pending',
+            status: 'Pending',
             title: 'Remove Button',
             description:
                 'We need a remove button in our task card. Meke the button red and use Heroicon for tashbin icon.',
@@ -26,10 +26,14 @@ export const taskSlice = createSlice({
             // TODO: mutate this
             // state.tasks = state.tasks.push(payload)
             const id = uuidv4()
-            state.tasks.push({ id, ...payload })
+            state.tasks.push({ id, status: "Pending", ...payload })
         },
         updateStatus: (state, { payload }) => {
             // TODO: mutate this
+            // state.tasks = state.tasks.status
+            // state.tasks.status = payload.status
+            const getTask = state.tasks.find( task => task?.id === payload?.id)
+            getTask.status = payload?.status;
         },
         updateTask: (state, { payload }) => {
             // filter by id

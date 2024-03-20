@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 const TaskCard = ({ task }) => {
   const dispatch = useDispatch();
+  const updatedStatus = (task?.status === "Pending") ? "In Progress" : (task?.status === "In Progress") ? "Done" : (task?.status === "Done") ? "Archive" : "Pending";
   // const task = {
   //   id: 1,
   //   status: 'pending',
@@ -34,8 +35,8 @@ const TaskCard = ({ task }) => {
           </button>
           <button
             onClick={() =>
-              dispatch(updateStatus({ id: task?.id, status: "Doing" }))
-              // dispatch(updateStatus({ id: task?.id, status: updatedStatus }))
+              // dispatch(updateStatus({ id: task?.id, status: "Doing" }))
+              dispatch(updateStatus({ id: task?.id, status: updatedStatus }))
             }
             title="In progress"
           >
