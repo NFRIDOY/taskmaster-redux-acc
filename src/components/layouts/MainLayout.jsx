@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 
 const MainLayout = () => {
   return (
-    <div className="flex">
+    <div className="flex max-h-screen overflow-hidden">
       <div className="w-[80px]">
         <Sidebar />
       </div>
