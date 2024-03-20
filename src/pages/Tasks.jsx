@@ -13,7 +13,7 @@ const Tasks = () => {
   const pendingTasks = tasks?.filter((task) => task?.status === "Pending")
   const inProgressTasks = tasks?.filter((task) => task?.status === "In Progress")
   const doneTasks = tasks?.filter((task) => task?.status === "Done")
-  const archiveTasks = tasks?.filter((task) => task?.status === "Archive")
+  // const archiveTasks = tasks?.filter((task) => task?.status === "Archive")
 
   return (
     <div className="h-screen grid grid-cols-12">
