@@ -4,7 +4,7 @@ import taskSlice from "./features/tasks/taskSlice";
 // // export but not default 
 export const store = configureStore({
     reducer: {
-        tasks: taskSlice,
+        taskSlice: taskSlice,
     },
 })
 // // not exported 
