@@ -5,7 +5,7 @@ import { addTask, updateTask, removeTask } from "../../redux/features/tasks/task
 
 
 export default function AddTaskModal({ isOpen, setIsOpen }) {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const { tasks } = useSelector((state) => state.taskSlice)
     const dispatch = useDispatch();
     
@@ -15,7 +15,11 @@ export default function AddTaskModal({ isOpen, setIsOpen }) {
         console.log("tasks= ", tasks);
         dispatch(addTask(data))
         console.log("After add tasks= ", tasks);
+        reset();
+        setIsOpen(false); // close the modal
     }
+
+
     return (
         <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={`Total Task ${tasks.length}. Add More`}>
             <form onSubmit={handleSubmit(onSubmit)}>
