@@ -8,6 +8,7 @@ export default function AddTaskModal({ isOpen, setIsOpen }) {
     const { register, handleSubmit } = useForm();
     const { tasks } = useSelector((state) => state.taskSlice)
     const dispatch = useDispatch();
+    
 
     const onSubmit = (data) => {
         console.log(data);
