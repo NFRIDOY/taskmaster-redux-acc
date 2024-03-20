@@ -9,7 +9,11 @@ const Tasks = () => {
   let [isOpen, setIsOpen] = useState(false)
   const { tasks } = useSelector((state) => state.taskSlice);
   const totalTasks = tasks.length;
-  const pendingTasks = tasks.map((task) => task)
+  // TODO: use filter
+  const pendingTasks = tasks?.filter((task) => task?.status === "Pending")
+  const inProgressTasks = tasks?.filter((task) => task?.status === "In Progress")
+  const doneTasks = tasks?.filter((task) => task?.status === "Done")
+  const archiveTasks = tasks?.filter((task) => task?.status === "Archive")
 
   return (
     <div className="h-screen grid grid-cols-12">
@@ -45,7 +49,7 @@ const Tasks = () => {
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Pending</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {totalTasks}
+                {pendingTasks.length}
               </p>
             </div>
             <div className="space-y-3">
@@ -59,23 +63,26 @@ const Tasks = () => {
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>In Progress</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {totalTasks}
+                {inProgressTasks.length}
               </p>
             </div>
             <div className="space-y-3">
-              <TaskCard />
-              <TaskCard />
+              {
+                inProgressTasks.map(task => <TaskCard key={task} task={task}></TaskCard>)
+              }
             </div>
           </div>
           <div className="relative max-h-[calc(100vh-130px)] overflow-auto">
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Done</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {totalTasks}
+                {doneTasks.length}
               </p>
             </div>
             <div className="space-y-3">
-              <TaskCard />
+              {
+                doneTasks.map(task => <TaskCard key={task} task={task}></TaskCard>)
+              }
             </div>
           </div>
         </div>
