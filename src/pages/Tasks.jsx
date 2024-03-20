@@ -41,7 +41,7 @@ const Tasks = () => {
           </div>
         </div>
         <div className="grid grid-cols-3 gap-5 mt-10">
-          <div className="relative h-[800px] overflow-auto">
+          <div className="relative max-h-[calc(100vh-130px)] overflow-auto">
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Pending</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
@@ -55,7 +55,7 @@ const Tasks = () => {
 
             </div>
           </div>
-          <div className="relative h-[800px] overflow-auto">
+          <div className="relative max-h-[calc(100vh-130px)] overflow-auto">
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>In Progress</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
@@ -67,7 +67,7 @@ const Tasks = () => {
               <TaskCard />
             </div>
           </div>
-          <div className="relative h-[800px] overflow-auto">
+          <div className="relative max-h-[calc(100vh-130px)] overflow-auto">
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Done</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
